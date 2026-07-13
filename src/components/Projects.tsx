@@ -33,8 +33,8 @@ export function Projects() {
           Featured work
         </motion.h2>
         <p className="mt-3 max-w-2xl text-text-muted">
-          A selection of production AI, GenAI, ML, voice AI, RAG, and data
-          systems I&apos;ve built or contributed to.
+          A few things I&apos;ve built or contributed to: voice AI, RAG,
+          predictive ML, and the data plumbing behind them.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-2">

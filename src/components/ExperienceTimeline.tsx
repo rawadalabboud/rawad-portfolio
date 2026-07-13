@@ -8,7 +8,7 @@ export function ExperienceTimeline() {
     <section id="experience" className="py-20">
       <div className="section-container">
         <SectionLabel label="// experience" />
-        <h2 className="mt-2 text-3xl font-bold sm:text-4xl">My journey</h2>
+        <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Where I&apos;ve worked</h2>
 
         <div className="relative mt-12">
           <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-accent-cyan/50 via-accent-violet/30 to-transparent sm:left-6" />

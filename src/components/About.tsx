@@ -6,29 +6,27 @@ import { GlowCard } from "./ui/GlowCard";
 const focusCards = [
   {
     icon: Brain,
-    title: "Production GenAI",
+    title: "GenAI in production",
     description:
-      "RAG assistants, tool-calling apps, voice agents, and streaming interfaces connected to real APIs.",
+      "RAG assistants, tool-calling apps, voice agents, and streaming UIs hooked up to real APIs.",
   },
   {
     icon: LineChart,
-    title: "Predictive Modeling",
+    title: "Predictive modeling",
     description:
-      "Conversion scoring, calibration, temporal backtesting, and business-oriented ML evaluation.",
+      "Conversion scoring, calibration, backtesting. ML evaluated on business metrics, not just accuracy.",
   },
   {
     icon: Database,
-    title: "Data & Research Engineering",
+    title: "Data & research engineering",
     description:
-      "Pipelines for EEG, clinical, and operational data — from ingestion to dashboards and research outputs.",
+      "Pipelines for EEG, clinical, and ops data, from raw ingestion to dashboards people actually use.",
   },
 ];
 
-const bio = `I'm Rawad Al Abboud, an ML/AI Engineer, Data Scientist, and GenAI Developer based in Paris. My background combines telecommunications engineering, signal and image processing, clinical research, and production AI systems.
+const bio = `I'm Rawad, an ML/AI engineer and data scientist in Paris. My path started in telecom engineering and signal processing, moved through EEG-based research, and landed in applied AI: pipelines, predictive models, RAG systems, voice agents, and full-stack GenAI products.
 
-I started from signal processing and EEG-based machine learning, then moved toward applied AI engineering: building data pipelines, predictive models, RAG systems, voice AI agents, and full-stack GenAI products connected to real business workflows.
-
-Today, I work at the intersection of LLMs, structured data, APIs, and product impact — designing systems that do more than demo well: they retrieve, reason, call tools, qualify leads, stream responses, and support measurable decisions.`;
+These days I work where LLMs meet structured data and real APIs. I like building things that retrieve, call tools, qualify leads, and stream answers, not just demo well in a slide deck.`;
 
 export function About() {
   return (
@@ -36,12 +34,12 @@ export function About() {
       <div className="section-container">
         <SectionLabel label="// about" />
         <h2 className="mt-2 text-3xl font-bold sm:text-4xl">
-          The engineer behind the systems
+          A bit about me
         </h2>
 
         <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-sm text-emerald-400">
           <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
-          Open to AI / Data / GenAI opportunities
+          Open to new roles in AI, data, and GenAI
         </span>
 
         <motion.p

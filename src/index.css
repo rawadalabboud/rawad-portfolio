@@ -94,7 +94,17 @@ body {
   @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
 }
 
+section[id],
+article[id] {
+  scroll-margin-top: 5.5rem;
+}
+
 .backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-face {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
@@ -111,4 +121,42 @@ body {
 ::-webkit-scrollbar-thumb {
   background: rgba(34, 211, 238, 0.25);
   border-radius: 4px;
+}
+
+/* Blog article typography */
+.prose-blog {
+  @apply text-text-primary leading-relaxed;
+}
+
+.prose-blog p {
+  @apply mb-5 text-base text-text-muted;
+}
+
+.prose-blog h2 {
+  @apply mt-10 mb-4 text-xl font-semibold text-text-primary sm:text-2xl;
+}
+
+.prose-blog ul,
+.prose-blog ol {
+  @apply mb-5 ml-5 space-y-2 text-text-muted;
+}
+
+.prose-blog ul {
+  @apply list-disc;
+}
+
+.prose-blog ol {
+  @apply list-decimal;
+}
+
+.prose-blog li {
+  @apply pl-1;
+}
+
+.prose-blog strong {
+  @apply font-semibold text-text-primary;
+}
+
+.prose-blog em {
+  @apply text-text-primary not-italic;
 }

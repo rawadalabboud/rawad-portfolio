@@ -3,45 +3,54 @@ export type BlogPost = {
   title: string;
   description: string;
   tags: string[];
-  href: string;
+  date: string;
+  readTime: string;
   status: "coming-soon" | "read";
 };
 
 export const blogPosts: BlogPost[] = [
   {
     id: "voice-ai-leads",
-    title: "Building voice AI agents that actually qualify leads",
+    title: "Voice agents that actually qualify leads",
     description:
-      "Lessons from designing Retell AI workflows for real lead-generation funnels.",
+      "What I learned building Retell AI workflows for real lead-gen funnels, not toy demos.",
     tags: ["Voice AI", "Retell", "Lead Gen"],
-    href: "#",
-    status: "coming-soon",
+    date: "2026-06-12",
+    readTime: "8 min",
+    status: "read",
   },
   {
     id: "cpl-sales",
-    title: "Why CPL is not enough: connecting leads to sales outcomes",
+    title: "CPL isn't the full picture",
     description:
-      "A practical view on measuring acquisition quality with downstream conversion data.",
+      "Why measuring acquisition quality means looking at what happens after the lead comes in.",
     tags: ["Analytics", "Lead Gen", "ML"],
-    href: "#",
-    status: "coming-soon",
+    date: "2026-05-28",
+    readTime: "6 min",
+    status: "read",
   },
   {
     id: "rag-production",
-    title: "RAG beyond the demo: ingestion, reranking, streaming, and persistence",
+    title: "RAG past the demo stage",
     description:
-      "How to make retrieval-augmented assistants more reliable in production.",
+      "Ingestion, reranking, streaming, persistence. The unglamorous parts that make assistants reliable.",
     tags: ["RAG", "GenAI", "Production"],
-    href: "#",
-    status: "coming-soon",
+    date: "2026-04-15",
+    readTime: "9 min",
+    status: "read",
   },
   {
     id: "lead-routing",
-    title: "Lead routing with machine learning",
+    title: "Routing leads with ML",
     description:
-      "Using conversion probability, calibration, and temporal backtesting to support smarter routing.",
+      "Using conversion probability and backtesting to send each lead to the right call center.",
     tags: ["ML", "Routing", "CatBoost"],
-    href: "#",
-    status: "coming-soon",
+    date: "2026-03-20",
+    readTime: "7 min",
+    status: "read",
   },
 ];
+
+export function getBlogPost(id: string): BlogPost | undefined {
+  return blogPosts.find((post) => post.id === id);
+}

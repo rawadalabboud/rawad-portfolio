@@ -1,16 +1,23 @@
+import type { MouseEvent } from "react";
 import { motion } from "framer-motion";
-import {
-  Code2,
-  Share2,
-  Mail,
-  Download,
-  ArrowDown,
-} from "lucide-react";
+import { Mail, ArrowDown } from "lucide-react";
 import { profile } from "../data/profile";
+import { publicUrl } from "../lib/publicUrl";
+import { scrollToSection } from "../lib/scroll";
+import { CvLinks } from "./ui/CvLinks";
 import { GradientText } from "./ui/GradientText";
+import { GitHubIcon, LinkedInIcon } from "./ui/SocialIcons";
 import { Tag } from "./ui/Tag";
 
 export function Hero() {
+  const handleSectionNav = (
+    e: MouseEvent<HTMLAnchorElement>,
+    id: string
+  ) => {
+    e.preventDefault();
+    scrollToSection(id);
+  };
+
   return (
     <section
       id="home"
@@ -43,21 +50,16 @@ export function Hero() {
             <div className="flex flex-wrap gap-3">
               <a
                 href="#projects"
+                onClick={(e) => handleSectionNav(e, "projects")}
                 className="inline-flex items-center gap-2 rounded-xl bg-accent-cyan/15 px-5 py-2.5 text-sm font-medium text-accent-cyan ring-1 ring-accent-cyan/30 transition hover:bg-accent-cyan/25"
               >
                 View Projects
                 <ArrowDown size={16} />
               </a>
-              <a
-                href={profile.cvPath}
-                download
-                className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-5 py-2.5 text-sm font-medium text-text-primary transition hover:border-accent-cyan/40 hover:text-accent-cyan"
-              >
-                <Download size={16} />
-                Download CV
-              </a>
+              <CvLinks />
               <a
                 href="#contact"
+                onClick={(e) => handleSectionNav(e, "contact")}
                 className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-5 py-2.5 text-sm font-medium text-text-primary transition hover:border-accent-violet/40"
               >
                 <Mail size={16} />
@@ -70,7 +72,7 @@ export function Hero() {
                 className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-4 py-2.5 text-sm text-text-muted transition hover:text-accent-cyan"
                 aria-label="GitHub"
               >
-                <Code2 size={18} />
+                <GitHubIcon size={18} />
               </a>
               <a
                 href={profile.links.linkedin}
@@ -79,7 +81,7 @@ export function Hero() {
                 className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-4 py-2.5 text-sm text-text-muted transition hover:text-accent-cyan"
                 aria-label="LinkedIn"
               >
-                <Share2 size={18} />
+                <LinkedInIcon size={18} />
               </a>
             </div>
           </motion.div>
@@ -98,7 +100,7 @@ export function Hero() {
             >
               <div className="mx-auto mb-4 h-28 w-28 overflow-hidden rounded-full ring-2 ring-accent-cyan/40 ring-offset-2 ring-offset-bg-elev">
                 <img
-                  src={profile.profileImage}
+                  src={publicUrl(profile.profileImage)}
                   alt={profile.name}
                   className="h-full w-full object-cover object-top"
                 />

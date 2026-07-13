@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const BOOT_LINES = [
-  "loading genai systems...",
-  "connecting to vector stores...",
-  "initializing voice agents...",
-  "calibrating predictive models...",
-  "deploying portfolio...",
+  "loading projects...",
+  "warming up the models...",
+  "checking the pipelines...",
+  "almost there...",
+  "ready.",
 ];
 
 type BootScreenProps = {
@@ -54,7 +54,7 @@ export function BootScreen({ onComplete }: BootScreenProps) {
         <div className="w-full max-w-md px-8">
           <p className="mb-4 text-accent-cyan">
             <span className="text-text-muted">&gt; </span>
-            booting rawad.ai
+            booting portfolio
           </p>
 
           <div className="mb-6 h-1.5 w-full overflow-hidden rounded-full bg-white/10">

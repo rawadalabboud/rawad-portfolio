@@ -1,6 +1,6 @@
-# Rawad Al Abboud — Portfolio
+# Rawad Al Abboud | Portfolio
 
-Production-ready personal portfolio for **Rawad Al Abboud** — ML/AI Engineer, Data Scientist & GenAI Developer.
+Production-ready personal portfolio for **Rawad Al Abboud**, ML/AI Engineer, Data Scientist & GenAI Developer.
 
 Built with React, Vite, TypeScript, Tailwind CSS, Framer Motion, and Lucide React.
 
@@ -88,4 +88,4 @@ src/
 
 ## License
 
-Private portfolio — all rights reserved.
+Private portfolio. All rights reserved.

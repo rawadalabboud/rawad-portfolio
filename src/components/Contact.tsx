@@ -1,8 +1,10 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Code2, Share2, Mail, Download, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { profile } from "../data/profile";
+import { CvLinks } from "./ui/CvLinks";
 import { SectionLabel } from "./ui/SectionLabel";
+import { GitHubIcon, LinkedInIcon } from "./ui/SocialIcons";
 
 export function Contact() {
   const [form, setForm] = useState({
@@ -26,12 +28,12 @@ export function Contact() {
       <div className="section-container">
         <SectionLabel label="// contact" />
         <h2 className="mt-2 text-3xl font-bold sm:text-4xl">
-          Let&apos;s build something
+          Get in touch
         </h2>
         <p className="mt-4 max-w-2xl text-text-muted">
-          I&apos;m open to AI, Data Science, GenAI, MLOps, and full-stack AI
-          opportunities — especially projects involving LLMs, voice agents, RAG,
-          predictive modeling, and production data systems.
+          I&apos;m looking for roles in AI, data science, and GenAI, especially
+          work involving LLMs, voice agents, RAG, or predictive modeling. Drop
+          me a line.
         </p>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-2">
@@ -58,14 +60,14 @@ export function Contact() {
                 className="glass rounded-xl p-3 text-text-muted transition hover:text-accent-cyan"
                 aria-label="GitHub"
               >
-                <Code2 size={20} />
+                <GitHubIcon size={20} />
               </a>
               <a
                 href={profile.links.linkedin}
                 className="glass rounded-xl p-3 text-text-muted transition hover:text-accent-cyan"
                 aria-label="LinkedIn"
               >
-                <Share2 size={20} />
+                <LinkedInIcon size={20} />
               </a>
               <a
                 href={`mailto:${profile.email}`}
@@ -74,19 +76,15 @@ export function Contact() {
               >
                 <Mail size={20} />
               </a>
-              <a
-                href={profile.cvPath}
-                download
-                className="glass rounded-xl p-3 text-text-muted transition hover:text-accent-cyan"
-                aria-label="Download CV"
-              >
-                <Download size={20} />
-              </a>
+              <CvLinks variant="icons" />
+            </div>
+
+            <div className="mt-4 flex flex-wrap gap-3">
+              <CvLinks />
             </div>
 
             <p className="pt-2 text-xs text-text-muted/80">
-              Form uses mailto — no backend required. Your email client will
-              open on send.
+              This form opens your email client. No backend, no tracking.
             </p>
           </div>
 

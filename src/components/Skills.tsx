@@ -28,9 +28,9 @@ export function Skills() {
     <section className="py-20">
       <div className="section-container">
         <SectionLabel label="// skills" />
-        <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Technical stack</h2>
+        <h2 className="mt-2 text-3xl font-bold sm:text-4xl">What I work with</h2>
         <p className="mt-3 max-w-2xl text-text-muted">
-          Tools and frameworks I use to build production AI, data, and full-stack
+          The tools I reach for most when building AI, data, and full-stack
           systems.
         </p>
 

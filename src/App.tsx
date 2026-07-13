@@ -1,47 +1,17 @@
-import { useState, useCallback } from "react";
-import { AnimatePresence } from "framer-motion";
-import { BootScreen } from "./components/BootScreen";
-import { Navbar } from "./components/Navbar";
-import { Hero } from "./components/Hero";
-import { Stats } from "./components/Stats";
-import { Projects } from "./components/Projects";
-import { About } from "./components/About";
-import { Skills } from "./components/Skills";
-import { ExperienceTimeline } from "./components/ExperienceTimeline";
-import { Writing } from "./components/Writing";
-import { Contact } from "./components/Contact";
-import { Footer } from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ScrollToTop } from "./components/ScrollToTop";
+import { HomePage } from "./pages/HomePage";
+import { BlogPostPage } from "./pages/BlogPostPage";
 
 function App() {
-  const [booting, setBooting] = useState(true);
-
-  const handleBootComplete = useCallback(() => {
-    setBooting(false);
-  }, []);
-
   return (
-    <>
-      <AnimatePresence mode="wait">
-        {booting && <BootScreen key="boot" onComplete={handleBootComplete} />}
-      </AnimatePresence>
-
-      {!booting && (
-        <div className="min-h-screen bg-bg-base">
-          <Navbar />
-          <main>
-            <Hero />
-            <Stats />
-            <Projects />
-            <About />
-            <Skills />
-            <ExperienceTimeline />
-            <Writing />
-            <Contact />
-          </main>
-          <Footer />
-        </div>
-      )}
-    </>
+    <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, "") || "/"}>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/blog/:slug" element={<BlogPostPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "../data/nav";
 import { useActiveSection } from "../hooks/useActiveSection";
+import { scrollToSection } from "../lib/scroll";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -11,7 +12,7 @@ export function Navbar() {
   const handleNav = (href: string) => {
     setOpen(false);
     const id = href.replace("#", "");
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    scrollToSection(id);
   };
 
   return (

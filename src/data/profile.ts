@@ -6,16 +6,17 @@ export const profile = {
   phone: "+33 6 95 05 31 92",
   handle: "@rawadabboud",
   tagline:
-    "I build production-ready AI systems: GenAI workflows, RAG assistants, voice agents, predictive models, and full-stack AI applications connected to real APIs, data pipelines, and measurable business outcomes.",
-  heroGreeting: "Hello world — I'm",
+    "I build AI systems that ship: voice agents, RAG chatbots, predictive models, and full-stack apps wired to real APIs and data pipelines.",
+  heroGreeting: "Hey, I'm",
   heroSubtitle:
-    "ML/AI Engineer, Data Scientist & GenAI Developer based in Paris.",
-  cvPath: "/cv_rawad_al_abboud.pdf",
+    "ML/AI engineer and data scientist, based in Paris.",
+  cvPath: "/cv_rawad_al_abboud.pdf?v=2026-07-12",
+  cvDownloadName: "Rawad_Al_Abboud_Resume.pdf",
   profileImage: "/profile.jpg",
   links: {
-    github: "#",
-    linkedin: "#",
+    github: "https://github.com/rawadalabboud",
+    linkedin: "https://www.linkedin.com/in/rawad-al-abboud/",
   },
-  profileTags: ["GenAI", "ML", "RAG", "Voice AI", "Data Engineering"],
-  statusBadge: "ID · 0xRA ● LIVE",
+  profileTags: ["GenAI", "ML", "RAG", "Voice AI", "MCP", "Data Engineering"],
+  statusBadge: "Available for work",
 } as const;
