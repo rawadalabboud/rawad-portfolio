@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" role="img" aria-label="Rawad Al Abboud logo (Synapse R)">
+  <defs>
+    <linearGradient id="rawad-grad" x1="8" y1="6" x2="40" y2="42" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3DD9C8"/>
+      <stop offset="1" stop-color="#8B7CF6"/>
+    </linearGradient>
+    <linearGradient id="rawad-orbit" x1="10" y1="8" x2="38" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3DD9C8" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#8B7CF6" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+
+  <path
+    d="M36 14.5a17 17 0 1 0-1.2 19.2"
+    stroke="url(#rawad-orbit)"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+  <path
+    d="M15 34V14"
+    stroke="url(#rawad-grad)"
+    stroke-width="3.6"
+    stroke-linecap="round"
+  />
+  <path
+    d="M15 14c0 0 14-1 14 9.5c0 7.5-9 8.5-14 5"
+    stroke="url(#rawad-grad)"
+    stroke-width="3.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M15 23.5 31.5 34"
+    stroke="url(#rawad-grad)"
+    stroke-width="3.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <circle cx="15" cy="23.5" r="2.6" fill="#3DD9C8"/>
+  <circle cx="15" cy="23.5" r="4.8" stroke="#3DD9C8" stroke-opacity="0.28" stroke-width="1"/>
+</svg>

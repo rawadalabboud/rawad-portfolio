@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 352" fill="none">
+  <rect width="800" height="352" fill="#181614"/>
+  <rect width="800" height="352" fill="url(#glow)" opacity="0.9"/>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#c97b63" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#181614" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="120" y="72" width="560" height="176" rx="14" fill="#100f0d" stroke="rgba(243,237,228,0.06)"/>
+  <circle cx="320" cy="168" r="52" stroke="#9b9488" stroke-opacity="0.25" fill="none"/>
+  <circle cx="320" cy="168" r="32" stroke="#d9b86c" stroke-opacity="0.35" fill="none"/>
+  <circle cx="320" cy="168" r="10" fill="#c97b63"/>
+  <path d="M372 168h48" stroke="#d9b86c" stroke-width="2" stroke-dasharray="5 5"/>
+  <rect x="420" y="116" width="200" height="104" rx="12" stroke="#d9b86c" stroke-width="2" fill="#201e1b"/>
+  <circle cx="452" cy="148" r="5" fill="#d9b86c"/>
+  <circle cx="488" cy="148" r="5" fill="#c97b63"/>
+  <circle cx="524" cy="148" r="5" fill="#d9b86c"/>
+  <path d="M444 176c32-28 64 36 96 4s48-20 80-8" stroke="#d9b86c" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.75"/>
+  <path d="M444 200c28-16 56 20 84 4s56-24 84-4" stroke="#c97b63" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.55"/>
+  <text x="40" y="318" fill="#9b9488" font-family="ui-monospace, monospace" font-size="18">MCP · tools · eligibility</text>
+</svg>
