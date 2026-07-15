@@ -1,12 +1,21 @@
-# Rawad Al Abboud | Portfolio
+# rawad.ai — Portfolio
 
-Production-ready personal portfolio for **Rawad Al Abboud**, ML/AI Engineer, Data Scientist & GenAI Developer.
+Personal site for **Rawad Al Abboud**, ML/AI engineer and data scientist in Paris.
 
-Built with React, Vite, TypeScript, Tailwind CSS, Framer Motion, and Lucide React.
+Production work (voice AI, RAG, predictive ML) plus open-source research repos, all in one place.
+
+**Live site:** deploy from this repo (Vercel or GitHub Pages)
+
+## Stack
+
+- React 19 + TypeScript + Vite  
+- Tailwind CSS v4 · Framer Motion · Lucide  
+- Instrument Serif + DM Sans + IBM Plex Mono  
 
 ## Run locally
 
 ```bash
+git clone https://github.com/rawadalabboud/rawad-portfolio.git
 cd rawad-portfolio
 npm install
 npm run dev
@@ -21,71 +30,56 @@ npm run build
 npm run preview
 ```
 
-## Deploy on Vercel
+## Deploy
 
-1. Push this repo to GitHub.
-2. Import the project in [Vercel](https://vercel.com).
-3. Framework preset: **Vite**
-4. Build command: `npm run build`
-5. Output directory: `dist`
-6. Leave `VITE_BASE_PATH` unset (defaults to `/`).
+### Vercel (recommended)
 
-## Deploy on GitHub Pages
+1. Import repo on [vercel.com](https://vercel.com)  
+2. Framework: **Vite** · Build: `npm run build` · Output: `dist`  
 
-1. Install gh-pages (one-time):
+### GitHub Pages
 
-   ```bash
-   npm install -D gh-pages
-   ```
-
-2. Create `.env.production`:
-
-   ```env
-   VITE_BASE_PATH=/rawad-portfolio/
-   ```
-
-   Replace `rawad-portfolio` with your repository name.
-
-3. Deploy:
-
-   ```bash
-   npm run deploy:gh
-   ```
-
-4. In GitHub repo **Settings → Pages**, set source to `gh-pages` branch.
-
-## Placeholders to replace
-
-| Item | Where to edit |
-|------|----------------|
-| GitHub URL | `src/data/profile.ts` → `links.github` |
-| LinkedIn URL | `src/data/profile.ts` → `links.linkedin` |
-| CV PDF | Add `public/cv_rawad_al_abboud.pdf` (see `public/CV_README.txt`) |
-| Profile photo | Replace initials avatar in `src/components/Hero.tsx` |
-| Project links | `src/data/projects.ts` → each `links` object |
-| Blog URLs | `src/data/blog.ts` → `href` per post |
-
-## Project structure
-
-```
-src/
-├── data/           # Editable content (projects, skills, experience, etc.)
-├── components/     # UI sections
-│   └── ui/         # Reusable primitives
-├── hooks/          # useCountUp, useActiveSection
-├── App.tsx
-├── main.tsx
-└── index.css       # Theme tokens & utilities
+```bash
+# .env.production
+VITE_BASE_PATH=/rawad-portfolio/
+npm run deploy:gh
 ```
 
-## Files created
+Enable **Pages** from the `gh-pages` branch.
 
-- Config: `vite.config.ts`, `package.json`, `index.html`, `.env.example`
-- Data: `src/data/*.ts`
-- Components: BootScreen, Navbar, Hero, Stats, Projects, ProjectCard, About, Skills, ExperienceTimeline, Writing, Contact, Footer
-- UI: SectionLabel, GradientText, Tag, GlowCard, ProjectCover
-- Public: `favicon.svg`, `CV_README.txt`
+## Content structure
+
+| Path | Purpose |
+|------|---------|
+| `src/data/profile.ts` | Bio, links, CV path |
+| `src/data/projects.ts` | Featured production projects |
+| `src/data/openSource.ts` | Public GitHub repositories |
+| `src/data/skills.ts` | Skills by domain and depth |
+| `src/data/experience.ts` | Work history |
+| `src/data/certifications.ts` | Credentials |
+| `src/data/blog.ts` | Blog metadata |
+| `src/content/blog/` | Blog MDX-style content |
+| `public/brand/` | Logo SVGs and brand notes |
+
+## Related repositories
+
+| Repo | Topic |
+|------|-------|
+| [partema-eeg-analysis](https://github.com/rawadalabboud/partema-eeg-analysis) | EEG / rTMS research |
+| [bank-rag-lbp](https://github.com/rawadalabboud/bank-rag-lbp) | French banking RAG |
+| [bank-nlp-assistant](https://github.com/rawadalabboud/bank-nlp-assistant) | Intent + RAG NLP |
+| [mlops-fake-news](https://github.com/rawadalabboud/mlops-fake-news) | MLOps API demo |
+| [InternshipM2](https://github.com/rawadalabboud/InternshipM2) | Parkinson's EEG ML |
+| [ftrsgt-online](https://github.com/rawadalabboud/ftrsgt-online) | Online neuropsych task |
+| [tdbrain_dl](https://github.com/rawadalabboud/tdbrain_dl) | TDBrain CNN features |
+
+## Author
+
+**Rawad Al Abboud**  
+
+- GitHub: [@rawadalabboud](https://github.com/rawadalabboud)  
+- LinkedIn: [rawad-al-abboud](https://www.linkedin.com/in/rawad-al-abboud/)
 
 ## License
 
-Private portfolio. All rights reserved.
+© Rawad Al Abboud. All rights reserved.

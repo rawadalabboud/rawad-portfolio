@@ -4,8 +4,11 @@ const SECTION_IDS = [
   "home",
   "projects",
   "about",
+  "skills",
+  "research",
   "experience",
-  "writing",
+  "blogs",
+  "open-source",
   "contact",
 ];
 

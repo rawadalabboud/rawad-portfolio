@@ -9,7 +9,9 @@ import { Projects } from "../components/Projects";
 import { About } from "../components/About";
 import { Skills } from "../components/Skills";
 import { ExperienceTimeline } from "../components/ExperienceTimeline";
-import { Writing } from "../components/Writing";
+import { ResearchWork } from "../components/ResearchWork";
+import { Blogs } from "../components/Blogs";
+import { OpenSource } from "../components/OpenSource";
 import { Contact } from "../components/Contact";
 import { Footer } from "../components/Footer";
 import { scrollToSection } from "../lib/scroll";
@@ -62,8 +64,10 @@ export function HomePage() {
             <Projects />
             <About />
             <Skills />
+            <ResearchWork />
             <ExperienceTimeline />
-            <Writing />
+            <Blogs />
+            <OpenSource />
             <Contact />
           </main>
           <Footer />
