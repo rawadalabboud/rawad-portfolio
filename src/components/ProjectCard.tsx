@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ExternalLink, Code2, FileText } from "lucide-react";
+import { BookOpen, Code2, FileText } from "lucide-react";
 import type { Project } from "../data/projects";
 import { ProjectCover } from "./ui/ProjectCover";
 import { Tag } from "./ui/Tag";
@@ -10,6 +11,10 @@ type ProjectCardProps = {
   project: Project;
   index: number;
 };
+
+function isExternalUrl(href: string) {
+  return href.startsWith("http://") || href.startsWith("https://");
+}
 
 function ProjectLink({
   href,
@@ -20,31 +25,31 @@ function ProjectLink({
   className: string;
   children: ReactNode;
 }) {
-  if (!href || href === "#") {
+  if (!href) return null;
+
+  if (isExternalUrl(href)) {
     return (
-      <span
-        className={`${className} cursor-not-allowed opacity-40`}
-        aria-disabled="true"
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
       >
         {children}
-      </span>
+      </a>
     );
   }
 
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={className}
-    >
+    <Link to={href} className={className}>
       {children}
-    </a>
+    </Link>
   );
 }
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
   const [flipped, setFlipped] = useState(false);
+  const { github, details, caseStudy } = project.links;
 
   return (
     <motion.article
@@ -68,12 +73,12 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             className="flip-face absolute inset-0 flex flex-col overflow-hidden rounded-2xl border border-white/8 bg-bg-card"
             style={{ transform: "rotateY(0deg) translateZ(1px)" }}
           >
-            <ProjectCover coverId={project.coverId} />
+            <ProjectCover projectId={project.id} title={project.title} />
             <div className="flex flex-1 flex-col p-5">
               <span className="mb-1 font-mono text-xs text-accent-cyan">
                 {project.category}
               </span>
-              <h3 className="mb-2 text-lg font-semibold leading-snug">
+              <h3 className="mb-2 font-serif text-lg leading-snug text-text-primary">
                 {project.title}
               </h3>
               <p className="line-clamp-3 flex-1 text-sm text-text-muted">
@@ -92,7 +97,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             className="flip-face absolute inset-0 flex flex-col overflow-hidden rounded-2xl border border-white/8 bg-bg-card p-5"
             style={{ transform: "rotateY(180deg) translateZ(1px)" }}
           >
-            <h3 className="mb-2 text-lg font-semibold">{project.title}</h3>
+            <h3 className="mb-2 font-serif text-lg text-text-primary">{project.title}</h3>
             <p className="mb-3 text-xs font-medium text-accent-violet">Impact</p>
             <p className="mb-4 flex-1 text-sm text-text-muted">{project.impact}</p>
             <ul className="mb-4 max-h-28 space-y-1 overflow-y-auto text-xs text-text-muted">
@@ -104,27 +109,33 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               ))}
             </ul>
             <div className="flex flex-wrap gap-2">
-              <ProjectLink
-                href={project.links.caseStudy}
-                className="inline-flex items-center gap-1 rounded-lg bg-accent-cyan/10 px-3 py-1.5 text-xs text-accent-cyan ring-1 ring-accent-cyan/20 hover:bg-accent-cyan/20"
-              >
-                <FileText size={14} />
-                Case Study
-              </ProjectLink>
-              <ProjectLink
-                href={project.links.code}
-                className="inline-flex items-center gap-1 rounded-lg border border-white/10 px-3 py-1.5 text-xs text-text-muted hover:text-text-primary"
-              >
-                <Code2 size={14} />
-                Code
-              </ProjectLink>
-              <ProjectLink
-                href={project.links.demo}
-                className="inline-flex items-center gap-1 rounded-lg border border-white/10 px-3 py-1.5 text-xs text-text-muted hover:text-text-primary"
-              >
-                <ExternalLink size={14} />
-                Demo
-              </ProjectLink>
+              {details && (
+                <ProjectLink
+                  href={details}
+                  className="btn-primary !px-3 !py-1.5 text-xs"
+                >
+                  <BookOpen size={14} />
+                  Details
+                </ProjectLink>
+              )}
+              {github && (
+                <ProjectLink
+                  href={github}
+                  className="btn-primary !px-3 !py-1.5 text-xs"
+                >
+                  <Code2 size={14} />
+                  GitHub
+                </ProjectLink>
+              )}
+              {caseStudy && (
+                <ProjectLink
+                  href={caseStudy}
+                  className="btn-secondary !px-3 !py-1.5 text-xs"
+                >
+                  <FileText size={14} />
+                  Case Study
+                </ProjectLink>
+              )}
             </div>
           </div>
         </motion.div>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 352" fill="none">
+  <rect width="800" height="352" fill="#181614"/>
+  <rect width="800" height="352" fill="url(#glow)" opacity="0.9"/>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#8fa876" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#181614" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="120" y="72" width="560" height="176" rx="14" fill="#100f0d" stroke="rgba(243,237,228,0.06)"/>
+  <path d="M168 220 V160" stroke="#9b9488" stroke-opacity="0.3"/>
+  <path d="M280 220 V140" stroke="#9b9488" stroke-opacity="0.3"/>
+  <path d="M392 220 V120" stroke="#9b9488" stroke-opacity="0.3"/>
+  <path d="M504 220 V100" stroke="#9b9488" stroke-opacity="0.3"/>
+  <path d="M616 220 V128" stroke="#9b9488" stroke-opacity="0.3"/>
+  <path d="M152 196 C220 196, 260 148, 340 148 S460 220, 540 172 S640 120, 680 132" stroke="#d9b86c" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.85"/>
+  <path d="M152 212 C220 212, 280 176, 360 184 S480 228, 560 196 S640 156, 680 168" stroke="#c97b63" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <circle cx="340" cy="148" r="5" fill="#d9b86c"/>
+  <circle cx="540" cy="172" r="5" fill="#c97b63"/>
+  <circle cx="680" cy="132" r="5" fill="#8fa876"/>
+  <text x="40" y="318" fill="#9b9488" font-family="ui-monospace, monospace" font-size="18">ML · calibration · routing</text>
+</svg>

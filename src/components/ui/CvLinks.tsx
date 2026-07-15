@@ -39,7 +39,7 @@ export function CvLinks({ variant = "buttons" }: CvLinksProps) {
         href={cvUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-5 py-2.5 text-sm font-medium text-text-primary transition hover:border-accent-cyan/40 hover:text-accent-cyan"
+        className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm font-medium text-text-primary transition hover:border-accent-cyan/30 hover:text-accent-cyan"
       >
         <Eye size={16} />
         View Resume
@@ -47,7 +47,7 @@ export function CvLinks({ variant = "buttons" }: CvLinksProps) {
       <a
         href={cvUrl}
         download={profile.cvDownloadName}
-        className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-5 py-2.5 text-sm font-medium text-text-primary transition hover:border-accent-cyan/40 hover:text-accent-cyan"
+        className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm font-medium text-text-primary transition hover:border-accent-cyan/30 hover:text-accent-cyan"
       >
         <Download size={16} />
         Download Resume

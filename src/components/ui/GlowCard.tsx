@@ -10,16 +10,17 @@ type GlowCardProps = {
 export function GlowCard({ children, className = "", hover = true }: GlowCardProps) {
   return (
     <motion.div
-      className={`glow-border glass rounded-2xl p-6 ${className}`}
+      className={`glow-border rounded-2xl p-6 ${className}`}
       whileHover={
         hover
           ? {
-              boxShadow: "0 0 40px rgba(34, 211, 238, 0.12)",
-              y: -2,
+              y: -6,
+              boxShadow:
+                "0 32px 64px rgba(0, 0, 0, 0.45), 0 0 48px rgba(224, 122, 106, 0.08)",
             }
           : undefined
       }
-      transition={{ duration: 0.2 }}
+      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>

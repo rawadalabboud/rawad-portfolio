@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 352" fill="none">
+  <rect width="800" height="352" fill="#181614"/>
+  <rect width="800" height="352" fill="url(#glow)" opacity="0.9"/>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#c97b63" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#181614" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="120" y="72" width="560" height="176" rx="14" fill="#100f0d" stroke="rgba(243,237,228,0.06)"/>
+  <path d="M152 128c24-10 48 14 72 0s48-14 72 0 48 14 72 0 48-14 72 0 48 14 72 0 24-8 48 0" stroke="#d9b86c" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <path d="M152 156c24-10 48 14 72 0s48-14 72 0 48 14 72 0 48-14 72 0 48 14 72 0 24-8 48 0" stroke="#d9b86c" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.55"/>
+  <path d="M152 184c24-10 48 14 72 0s48-14 72 0 48 14 72 0 48-14 72 0 48 14 72 0 24-8 48 0" stroke="#c97b63" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.75"/>
+  <path d="M152 212c24-10 48 14 72 0s48-14 72 0 48 14 72 0 48-14 72 0 48 14 72 0 24-8 48 0" stroke="#c97b63" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <circle cx="400" cy="170" r="22" stroke="#d9b86c" stroke-width="2" fill="#201e1b"/>
+  <circle cx="400" cy="170" r="6" fill="#c97b63"/>
+  <text x="40" y="318" fill="#9b9488" font-family="ui-monospace, monospace" font-size="18">Retell · pipelines · webhooks</text>
+</svg>

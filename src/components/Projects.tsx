@@ -21,11 +21,11 @@ export function Projects() {
   }, [filter]);
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-24">
       <div className="section-container">
-        <SectionLabel label="// projects" />
+        <SectionLabel label="projects" />
         <motion.h2
-          className="mt-2 text-3xl font-bold sm:text-4xl"
+          className="section-heading mt-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -43,9 +43,9 @@ export function Projects() {
               key={f}
               type="button"
               onClick={() => setFilter(f)}
-              className={`rounded-full px-4 py-1.5 text-sm transition ${
+              className={`rounded-full px-4 py-2 text-sm font-medium transition ${
                 filter === f
-                  ? "bg-accent-cyan/15 text-accent-cyan ring-1 ring-accent-cyan/30"
+                  ? "bg-accent-cyan text-bg-base"
                   : "border border-white/10 text-text-muted hover:border-accent-cyan/30 hover:text-text-primary"
               }`}
             >

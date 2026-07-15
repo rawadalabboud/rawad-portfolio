@@ -15,8 +15,8 @@ export type Project = {
   bullets: string[];
   stack: string[];
   impact: string;
-  coverId: string;
-  links: { caseStudy?: string; code?: string; demo?: string };
+  coverImage: string;
+  links: { github?: string; details?: string; caseStudy?: string };
 };
 
 export const projectFilters = [
@@ -30,6 +30,10 @@ export const projectFilters = [
 ] as const;
 
 export type ProjectFilter = (typeof projectFilters)[number];
+
+export function getProject(id: string): Project | undefined {
+  return projects.find((project) => project.id === id);
+}
 
 export const projects: Project[] = [
   {
@@ -61,8 +65,11 @@ export const projects: Project[] = [
     ],
     impact:
       "4,400+ AI-qualified calls on 2,655 qualified C2C leads in H1 2026. Marketing finally knew which campaigns drove calls, and ops had fewer duplicate or lost leads.",
-    coverId: "phone",
-    links: { caseStudy: "#", code: "#", demo: "#" },
+    coverImage: "/projects/c2c-voice.svg",
+    links: {
+      details: "/project/c2c-tracking",
+      caseStudy: "/blog/cpl-sales",
+    },
   },
   {
     id: "retell-voice-agents",
@@ -92,8 +99,11 @@ export const projects: Project[] = [
     ],
     impact:
       "Cut manual qualification time while keeping conversations natural enough that callers didn't hang up. Fifteen modules, 60+ endpoints in production.",
-    coverId: "microphone",
-    links: { caseStudy: "#", code: "#", demo: "#" },
+    coverImage: "/projects/retell-pipelines.svg",
+    links: {
+      details: "/project/retell-voice-agents",
+      caseStudy: "/blog/voice-ai-leads",
+    },
   },
   {
     id: "webflow-rag",
@@ -127,8 +137,11 @@ export const projects: Project[] = [
     ],
     impact:
       "A working assistant on real site content for 150k+ insured clients across 6 product lines, not a demo with three hard-coded FAQs.",
-    coverId: "chat",
-    links: { caseStudy: "#", code: "#", demo: "#" },
+    coverImage: "/projects/webflow-rag.svg",
+    links: {
+      details: "/project/webflow-rag",
+      caseStudy: "/blog/rag-production",
+    },
   },
   {
     id: "offer-hub",
@@ -161,8 +174,10 @@ export const projects: Project[] = [
     ],
     impact:
       "LLMs could actually do things: check eligibility, pull offers, capture leads, instead of just talking about them.",
-    coverId: "api",
-    links: { caseStudy: "#", code: "#", demo: "#" },
+    coverImage: "/projects/offer-hub.svg",
+    links: {
+      details: "/project/offer-hub",
+    },
   },
   {
     id: "lead-routing-ml",
@@ -193,8 +208,11 @@ export const projects: Project[] = [
     ],
     impact:
       "Gave the team a data-backed way to match leads with the right partner instead of round-robin routing. Foundation for the Hopti integration.",
-    coverId: "routing",
-    links: { caseStudy: "#", code: "#", demo: "#" },
+    coverImage: "/projects/lead-routing.svg",
+    links: {
+      details: "/project/lead-routing-ml",
+      caseStudy: "/blog/lead-routing",
+    },
   },
   {
     id: "eeg-research",
@@ -222,7 +240,9 @@ export const projects: Project[] = [
     ],
     impact:
       "Helped the team study rTMS acceptability and personalized care without spending weeks on data prep.",
-    coverId: "eeg",
-    links: { caseStudy: "#", code: "#", demo: "#" },
+    coverImage: "/projects/eeg-research.svg",
+    links: {
+      github: "https://github.com/rawadalabboud/partema-eeg-analysis",
+    },
   },
 ];

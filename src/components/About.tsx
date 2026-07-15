@@ -30,15 +30,15 @@ These days I work where LLMs meet structured data and real APIs. I like building
 
 export function About() {
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="section-band py-24">
       <div className="section-container">
-        <SectionLabel label="// about" />
-        <h2 className="mt-2 text-3xl font-bold sm:text-4xl">
+        <SectionLabel label="about" />
+        <h2 className="section-heading mt-4">
           A bit about me
         </h2>
 
-        <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-sm text-emerald-400">
-          <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+        <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-status/30 bg-status/10 px-4 py-1.5 text-sm text-status">
+          <span className="h-2 w-2 animate-pulse rounded-full bg-status" />
           Open to new roles in AI, data, and GenAI
         </span>
 

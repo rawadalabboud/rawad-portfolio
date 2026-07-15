@@ -18,15 +18,17 @@ function StatItem({
 
   return (
     <motion.div
-      className="glass glow-border rounded-2xl p-6 text-center"
+      className="glow-border rounded-2xl p-6 text-center"
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
     >
-      <p className="text-3xl font-bold gradient-text sm:text-4xl">
-        {count}
-        {suffix}
+      <p className="font-serif text-4xl sm:text-5xl">
+        <span className="accent-number">
+          {count}
+          {suffix}
+        </span>
       </p>
       <p className="mt-2 text-sm text-text-muted">{label}</p>
     </motion.div>
@@ -38,7 +40,7 @@ export function Stats() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="py-12">
+    <section ref={ref} className="section-band py-14">
       <div className="section-container">
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {stats.map((stat) => (

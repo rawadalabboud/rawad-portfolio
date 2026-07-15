@@ -1,85 +1,123 @@
+export type SkillLevel = "core" | "strong" | "solid" | "working";
+
 export type SkillItem = {
   name: string;
-  level: number;
+  level: SkillLevel;
 };
 
 export type SkillGroup = {
   title: string;
+  description: string;
+  icon: "brain" | "sparkles" | "server" | "layout";
   skills: SkillItem[];
+};
+
+export const skillLevelMeta: Record<
+  SkillLevel,
+  { label: string; hint: string; dotClass: string }
+> = {
+  core: {
+    label: "Core",
+    hint: "Daily drivers in production",
+    dotClass: "bg-accent-cyan shadow-[0_0_8px_rgba(224,122,106,0.5)]",
+  },
+  strong: {
+    label: "Strong",
+    hint: "Shipped repeatedly, comfortable owning",
+    dotClass: "bg-text-primary",
+  },
+  solid: {
+    label: "Solid",
+    hint: "Regular use across projects",
+    dotClass: "bg-accent-violet",
+  },
+  working: {
+    label: "Working",
+    hint: "Familiar; ramp quickly",
+    dotClass: "bg-text-muted/60",
+  },
 };
 
 export const skillGroups: SkillGroup[] = [
   {
     title: "ML & data science",
+    description: "Models, signals, and evaluation that hold up in production.",
+    icon: "brain",
     skills: [
-      { name: "Python", level: 90 },
-      { name: "pandas", level: 88 },
-      { name: "scikit-learn", level: 85 },
-      { name: "PyTorch", level: 78 },
-      { name: "CatBoost", level: 82 },
-      { name: "Gradient Boosting", level: 82 },
-      { name: "Calibration", level: 80 },
-      { name: "Temporal Backtesting", level: 82 },
-      { name: "Feature Engineering", level: 85 },
-      { name: "Classification", level: 85 },
-      { name: "Model Serving", level: 80 },
-      { name: "Signal Processing", level: 82 },
-      { name: "EEG Data", level: 80 },
+      { name: "Python", level: "core" },
+      { name: "pandas", level: "core" },
+      { name: "scikit-learn", level: "strong" },
+      { name: "PyTorch", level: "strong" },
+      { name: "CatBoost", level: "strong" },
+      { name: "Gradient Boosting", level: "strong" },
+      { name: "Calibration", level: "strong" },
+      { name: "Temporal Backtesting", level: "strong" },
+      { name: "Feature Engineering", level: "strong" },
+      { name: "Classification", level: "strong" },
+      { name: "Model Serving", level: "strong" },
+      { name: "Signal Processing", level: "strong" },
+      { name: "EEG Data", level: "strong" },
     ],
   },
   {
     title: "GenAI & LLMs",
+    description: "RAG, agents, voice pipelines, and tool-calling in real products.",
+    icon: "sparkles",
     skills: [
-      { name: "OpenAI API", level: 88 },
-      { name: "GPT-4o-mini", level: 85 },
-      { name: "NLP", level: 85 },
-      { name: "RAG", level: 88 },
-      { name: "Embeddings", level: 86 },
-      { name: "BM25", level: 82 },
-      { name: "Reranking", level: 80 },
-      { name: "Tool Calling", level: 85 },
-      { name: "Structured Outputs", level: 86 },
-      { name: "Prompt Engineering", level: 88 },
-      { name: "A/B Testing", level: 80 },
-      { name: "Retell AI", level: 88 },
-      { name: "MCP", level: 82 },
-      { name: "Skybridge", level: 80 },
-      { name: "ChatGPT Apps SDK", level: 80 },
+      { name: "OpenAI API", level: "core" },
+      { name: "GPT-4o-mini", level: "strong" },
+      { name: "NLP", level: "strong" },
+      { name: "RAG", level: "core" },
+      { name: "Embeddings", level: "strong" },
+      { name: "BM25", level: "strong" },
+      { name: "Reranking", level: "strong" },
+      { name: "Tool Calling", level: "strong" },
+      { name: "Structured Outputs", level: "strong" },
+      { name: "Prompt Engineering", level: "core" },
+      { name: "A/B Testing", level: "strong" },
+      { name: "Retell AI", level: "core" },
+      { name: "MCP", level: "strong" },
+      { name: "Skybridge", level: "strong" },
+      { name: "ChatGPT Apps SDK", level: "strong" },
     ],
   },
   {
     title: "Backend & infra",
+    description: "APIs, data stores, and deployment paths I rely on to ship.",
+    icon: "server",
     skills: [
-      { name: "TypeScript", level: 85 },
-      { name: "SQL", level: 82 },
-      { name: "Node.js", level: 84 },
-      { name: "NestJS", level: 82 },
-      { name: "REST APIs", level: 88 },
-      { name: "FastAPI", level: 80 },
-      { name: "Prisma", level: 78 },
-      { name: "PostgreSQL", level: 80 },
-      { name: "Redis / Upstash", level: 82 },
-      { name: "BigQuery", level: 78 },
-      { name: "Google App Engine", level: 78 },
-      { name: "Docker", level: 78 },
-      { name: "GitHub Actions", level: 82 },
-      { name: "Git / GitHub", level: 88 },
+      { name: "TypeScript", level: "core" },
+      { name: "SQL", level: "strong" },
+      { name: "Node.js", level: "strong" },
+      { name: "NestJS", level: "strong" },
+      { name: "REST APIs", level: "core" },
+      { name: "FastAPI", level: "strong" },
+      { name: "Prisma", level: "solid" },
+      { name: "PostgreSQL", level: "strong" },
+      { name: "Redis / Upstash", level: "strong" },
+      { name: "BigQuery", level: "solid" },
+      { name: "Google App Engine", level: "solid" },
+      { name: "Docker", level: "solid" },
+      { name: "GitHub Actions", level: "strong" },
+      { name: "Git / GitHub", level: "core" },
     ],
   },
   {
     title: "Frontend & apps",
+    description: "Interfaces, maps, streaming UIs, and dashboards people actually use.",
+    icon: "layout",
     skills: [
-      { name: "Next.js", level: 85 },
-      { name: "React", level: 88 },
-      { name: "Vite", level: 85 },
-      { name: "Tailwind CSS", level: 88 },
-      { name: "Zustand", level: 75 },
-      { name: "Framer Motion", level: 82 },
-      { name: "Leaflet", level: 78 },
-      { name: "Turf.js", level: 75 },
-      { name: "OpenStreetMap", level: 75 },
-      { name: "Streamlit", level: 80 },
-      { name: "SSE Streaming", level: 82 },
+      { name: "Next.js", level: "strong" },
+      { name: "React", level: "core" },
+      { name: "Vite", level: "strong" },
+      { name: "Tailwind CSS", level: "core" },
+      { name: "Zustand", level: "solid" },
+      { name: "Framer Motion", level: "strong" },
+      { name: "Leaflet", level: "solid" },
+      { name: "Turf.js", level: "solid" },
+      { name: "OpenStreetMap", level: "solid" },
+      { name: "Streamlit", level: "strong" },
+      { name: "SSE Streaming", level: "strong" },
     ],
   },
 ];

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Logo } from "./ui/Logo";
 
 const BOOT_LINES = [
   "loading projects...",
@@ -52,30 +53,30 @@ export function BootScreen({ onComplete }: BootScreenProps) {
         transition={{ duration: 0.6 }}
       >
         <div className="w-full max-w-md px-8">
-          <p className="mb-4 text-accent-cyan">
-            <span className="text-text-muted">&gt; </span>
-            booting portfolio
-          </p>
+          <div className="mb-8 flex flex-col items-center gap-4">
+            <Logo size={56} />
+            <p className="text-sm tracking-tight text-text-muted">rawad.ai</p>
+          </div>
 
-          <div className="mb-6 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
+          <div className="mb-4 h-px w-full overflow-hidden rounded-full bg-white/[0.06]">
             <motion.div
-              className="h-full rounded-full bg-gradient-to-r from-accent-cyan to-accent-violet"
+              className="h-full bg-accent-cyan"
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ ease: "linear" }}
             />
           </div>
 
-          <p className="mb-4 text-right text-sm text-text-muted">{progress}%</p>
+          <p className="mb-6 text-right text-xs text-text-muted">{progress}%</p>
 
-          <div className="space-y-1 text-sm text-text-muted">
+          <div className="space-y-1.5 text-sm text-text-muted">
             {visibleLines.map((line) => (
               <motion.p
                 key={line}
                 initial={{ opacity: 0, x: -8 }}
                 animate={{ opacity: 1, x: 0 }}
               >
-                <span className="text-accent-cyan/60">→ </span>
+                <span className="text-accent-cyan/70">→ </span>
                 {line}
               </motion.p>
             ))}

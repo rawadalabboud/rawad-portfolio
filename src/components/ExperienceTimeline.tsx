@@ -1,14 +1,18 @@
 import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
+import { certifications } from "../data/certifications";
 import { experience } from "../data/experience";
 import { education } from "../data/education";
+import { profile } from "../data/profile";
 import { SectionLabel } from "./ui/SectionLabel";
+import { Tag } from "./ui/Tag";
 
 export function ExperienceTimeline() {
   return (
-    <section id="experience" className="py-20">
+    <section id="experience" className="section-band py-24">
       <div className="section-container">
-        <SectionLabel label="// experience" />
-        <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Where I&apos;ve worked</h2>
+        <SectionLabel label="experience" />
+        <h2 className="section-heading mt-4">Where I&apos;ve worked</h2>
 
         <div className="relative mt-12">
           <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-accent-cyan/50 via-accent-violet/30 to-transparent sm:left-6" />
@@ -45,7 +49,7 @@ export function ExperienceTimeline() {
           </div>
         </div>
 
-        <h3 className="mt-16 text-2xl font-semibold">Education</h3>
+        <h3 className="mt-16 font-serif text-2xl text-text-primary">Education</h3>
         <div className="mt-8 space-y-6">
           {education.map((edu, i) => (
             <motion.div
@@ -61,6 +65,71 @@ export function ExperienceTimeline() {
               <p className="text-sm text-text-muted">{edu.school}</p>
             </motion.div>
           ))}
+        </div>
+
+        <h3 className="mt-16 font-serif text-2xl text-text-primary">
+          Certifications
+        </h3>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          {certifications.map((cert, i) => {
+            const inProgress = cert.status === "in_progress";
+            const credentialUrl =
+              cert.credentialUrl ??
+              `${profile.links.linkedin}details/certifications/`;
+
+            return (
+              <motion.article
+                key={cert.title}
+                className={`glow-border flex flex-col rounded-2xl p-5 ${
+                  inProgress ? "border-accent-cyan/20" : ""
+                }`}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <p className="font-mono text-xs uppercase tracking-wide text-accent-cyan">
+                    {cert.issuer}
+                  </p>
+                  <p
+                    className={`shrink-0 font-mono text-xs ${
+                      inProgress ? "text-accent-cyan" : "text-text-muted"
+                    }`}
+                  >
+                    {cert.issued}
+                  </p>
+                </div>
+                <h4 className="mt-2 font-semibold leading-snug text-text-primary">
+                  {cert.title}
+                </h4>
+                {cert.examCode && (
+                  <p className="mt-1 font-mono text-xs text-text-muted">
+                    Exam {cert.examCode}
+                  </p>
+                )}
+                {cert.credentialId && (
+                  <p className="mt-1 font-mono text-xs text-text-muted">
+                    ID {cert.credentialId}
+                  </p>
+                )}
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {cert.skills.map((skill) => (
+                    <Tag key={skill}>{skill}</Tag>
+                  ))}
+                </div>
+                <a
+                  href={credentialUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm text-accent-cyan transition hover:underline"
+                >
+                  {inProgress ? "Certification details" : "View credential"}
+                  <ExternalLink size={14} />
+                </a>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>

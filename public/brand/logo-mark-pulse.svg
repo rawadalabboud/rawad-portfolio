@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" role="img" aria-label="Rawad Al Abboud logo (Pulse Mark)">
+  <defs>
+    <linearGradient id="pulse-grad" x1="6" y1="10" x2="42" y2="38" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3DD9C8"/>
+      <stop offset="0.55" stop-color="#5CE1D6"/>
+      <stop offset="1" stop-color="#8B7CF6"/>
+    </linearGradient>
+  </defs>
+  <path d="M6 34.5h36" stroke="#EEF2F8" stroke-opacity="0.08" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M7 34.5H16.5L22.5 11.5L28 27.5L33.5 34.5H41" stroke="url(#pulse-grad)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="22.5" cy="11.5" r="3" fill="#3DD9C8"/>
+</svg>

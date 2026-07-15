@@ -23,15 +23,15 @@ export function BlogArticle({ post, children }: BlogArticleProps) {
   });
 
   return (
-    <article className="min-h-screen bg-bg-base">
-      <header className="border-b border-white/5 px-4 py-6 sm:px-6">
+    <article className="bg-bg-base">
+      <header className="border-b border-white/5 px-4 py-6 pt-28 sm:px-6">
         <div className="section-container">
           <Link
-            to={{ pathname: "/", hash: "writing" }}
+            to="/#blogs"
             className="inline-flex items-center gap-2 text-sm text-text-muted transition hover:text-accent-cyan"
           >
             <ArrowLeft size={16} />
-            Back to writing
+            Back to blog
           </Link>
         </div>
       </header>
@@ -44,7 +44,7 @@ export function BlogArticle({ post, children }: BlogArticleProps) {
             ))}
           </div>
 
-          <h1 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+          <h1 className="font-serif text-3xl leading-tight tracking-tight sm:text-4xl lg:text-5xl">
             {post.title}
           </h1>
 
