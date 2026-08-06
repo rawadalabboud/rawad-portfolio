@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy:gh": "gh workflow run \"Deploy GitHub Pages\" --ref main"
+    "deploy:gh": "npm run build && npx gh-pages -d dist --dotfiles"
   },
   "dependencies": {
     "framer-motion": "^12.39.0",
