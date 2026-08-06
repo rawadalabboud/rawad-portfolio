@@ -3,12 +3,13 @@ export type SkillLevel = "core" | "strong" | "solid" | "working";
 export type SkillItem = {
   name: string;
   level: SkillLevel;
+  icon?: string;
 };
 
 export type SkillGroup = {
   title: string;
   description: string;
-  icon: "brain" | "sparkles" | "server" | "layout";
+  icon: "llm" | "ml" | "backend" | "cloud" | "devops" | "database" | "language";
   skills: SkillItem[];
 };
 
@@ -19,7 +20,7 @@ export const skillLevelMeta: Record<
   core: {
     label: "Core",
     hint: "Daily drivers in production",
-    dotClass: "bg-accent-cyan shadow-[0_0_8px_rgba(224,122,106,0.5)]",
+    dotClass: "bg-accent-cyan",
   },
   strong: {
     label: "Strong",
@@ -40,84 +41,101 @@ export const skillLevelMeta: Record<
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: "ML & data science",
-    description: "Models, signals, and evaluation that hold up in production.",
-    icon: "brain",
+    title: "LLMs & GenAI",
+    description: "Production LLM applications, agents, RAG, and voice AI.",
+    icon: "llm",
     skills: [
-      { name: "Python", level: "core" },
-      { name: "pandas", level: "core" },
-      { name: "scikit-learn", level: "strong" },
-      { name: "PyTorch", level: "strong" },
-      { name: "CatBoost", level: "strong" },
-      { name: "Gradient Boosting", level: "strong" },
-      { name: "Calibration", level: "strong" },
-      { name: "Temporal Backtesting", level: "strong" },
-      { name: "Feature Engineering", level: "strong" },
-      { name: "Classification", level: "strong" },
-      { name: "Model Serving", level: "strong" },
-      { name: "Signal Processing", level: "strong" },
-      { name: "EEG Data", level: "strong" },
-    ],
-  },
-  {
-    title: "GenAI & LLMs",
-    description: "RAG, agents, voice pipelines, and tool-calling in real products.",
-    icon: "sparkles",
-    skills: [
-      { name: "OpenAI API", level: "core" },
-      { name: "GPT-4o-mini", level: "strong" },
-      { name: "NLP", level: "strong" },
+      { name: "OpenAI API", level: "core", icon: "openai" },
+      { name: "Azure OpenAI", level: "strong", icon: "azure" },
+      { name: "Azure AI Foundry", level: "strong", icon: "azure" },
+      { name: "Azure AI Search", level: "strong", icon: "azure" },
+      { name: "Prompt Flow", level: "strong", icon: "azure" },
       { name: "RAG", level: "core" },
+      { name: "AI Agents", level: "core" },
+      { name: "MCP", level: "strong" },
+      { name: "Tool Calling", level: "strong" },
+      { name: "Retell AI", level: "core" },
       { name: "Embeddings", level: "strong" },
       { name: "BM25", level: "strong" },
       { name: "Reranking", level: "strong" },
-      { name: "Tool Calling", level: "strong" },
       { name: "Structured Outputs", level: "strong" },
-      { name: "Prompt Engineering", level: "core" },
-      { name: "A/B Testing", level: "strong" },
-      { name: "Retell AI", level: "core" },
-      { name: "MCP", level: "strong" },
       { name: "Skybridge", level: "strong" },
       { name: "ChatGPT Apps SDK", level: "strong" },
     ],
   },
   {
-    title: "Backend & infra",
-    description: "APIs, data stores, and deployment paths I rely on to ship.",
-    icon: "server",
+    title: "Machine Learning",
+    description: "Models, calibration, and evaluation that hold up in production.",
+    icon: "ml",
     skills: [
-      { name: "TypeScript", level: "core" },
-      { name: "SQL", level: "strong" },
-      { name: "Node.js", level: "strong" },
-      { name: "NestJS", level: "strong" },
-      { name: "REST APIs", level: "core" },
-      { name: "FastAPI", level: "strong" },
-      { name: "Prisma", level: "solid" },
-      { name: "PostgreSQL", level: "strong" },
-      { name: "Redis / Upstash", level: "strong" },
-      { name: "BigQuery", level: "solid" },
-      { name: "Google App Engine", level: "solid" },
-      { name: "Docker", level: "solid" },
-      { name: "GitHub Actions", level: "strong" },
-      { name: "Git / GitHub", level: "core" },
+      { name: "Python", level: "core", icon: "python" },
+      { name: "CatBoost", level: "strong" },
+      { name: "scikit-learn", level: "strong" },
+      { name: "PyTorch", level: "strong" },
+      { name: "pandas", level: "core" },
+      { name: "Feature Engineering", level: "strong" },
+      { name: "Calibration", level: "strong" },
+      { name: "Temporal Backtesting", level: "strong" },
+      { name: "Classification", level: "strong" },
+      { name: "Model Serving", level: "strong" },
+      { name: "Signal Processing", level: "strong" },
     ],
   },
   {
-    title: "Frontend & apps",
-    description: "Interfaces, maps, streaming UIs, and dashboards people actually use.",
-    icon: "layout",
+    title: "Backend & Frameworks",
+    description: "APIs and services that connect AI models to business logic.",
+    icon: "backend",
     skills: [
-      { name: "Next.js", level: "strong" },
-      { name: "React", level: "core" },
-      { name: "Vite", level: "strong" },
-      { name: "Tailwind CSS", level: "core" },
-      { name: "Zustand", level: "solid" },
-      { name: "Framer Motion", level: "strong" },
-      { name: "Leaflet", level: "solid" },
-      { name: "Turf.js", level: "solid" },
-      { name: "OpenStreetMap", level: "solid" },
-      { name: "Streamlit", level: "strong" },
+      { name: "TypeScript", level: "core", icon: "typescript" },
+      { name: "NestJS", level: "core", icon: "nestjs" },
+      { name: "Node.js", level: "strong", icon: "nodedotjs" },
+      { name: "FastAPI", level: "strong", icon: "fastapi" },
+      { name: "REST APIs", level: "core" },
+      { name: "React", level: "core", icon: "react" },
+      { name: "Next.js", level: "strong", icon: "nextdotjs" },
       { name: "SSE Streaming", level: "strong" },
+      { name: "Streamlit", level: "strong" },
+    ],
+  },
+  {
+    title: "Cloud & Platforms",
+    description: "Deployment targets and managed services for AI workloads.",
+    icon: "cloud",
+    skills: [
+      { name: "Google App Engine", level: "solid", icon: "googlecloud" },
+      { name: "Azure", level: "strong", icon: "azure" },
+      { name: "BigQuery", level: "solid", icon: "googlecloud" },
+      { name: "Upstash Redis", level: "strong", icon: "redis" },
+    ],
+  },
+  {
+    title: "Databases",
+    description: "Data stores behind AI pipelines and serving layers.",
+    icon: "database",
+    skills: [
+      { name: "PostgreSQL", level: "strong", icon: "postgresql" },
+      { name: "Redis", level: "strong", icon: "redis" },
+      { name: "BigQuery", level: "solid", icon: "googlecloud" },
+    ],
+  },
+  {
+    title: "DevOps",
+    description: "Containers, CI/CD, and deployment automation.",
+    icon: "devops",
+    skills: [
+      { name: "Docker", level: "solid", icon: "docker" },
+      { name: "GitHub Actions", level: "strong", icon: "githubactions" },
+      { name: "Git / GitHub", level: "core", icon: "github" },
+    ],
+  },
+  {
+    title: "Languages",
+    description: "Spoken languages for international teams.",
+    icon: "language",
+    skills: [
+      { name: "French (Fluent)", level: "core" },
+      { name: "English (Fluent)", level: "core" },
+      { name: "Spanish (Beginner)", level: "working" },
     ],
   },
 ];

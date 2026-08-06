@@ -10,6 +10,26 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "mcp-agents",
+    title: "MCP when agents need real systems",
+    description:
+      "Tool calling, auth boundaries, and observability for voice and text agents that touch CRMs and APIs.",
+    tags: ["MCP", "Agents", "Voice AI"],
+    date: "2026-07-08",
+    readTime: "7 min",
+    status: "read",
+  },
+  {
+    id: "bilingual-ai",
+    title: "Bilingual AI is a design problem",
+    description:
+      "Language policy, RAG metadata, and voice settings for products that ship in French and English.",
+    tags: ["Multilingual", "RAG", "Voice AI"],
+    date: "2026-06-25",
+    readTime: "8 min",
+    status: "read",
+  },
+  {
     id: "voice-ai-leads",
     title: "Voice agents that actually qualify leads",
     description:

@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useLayoutEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { BootScreen } from "../components/BootScreen";
@@ -7,13 +7,14 @@ import { Hero } from "../components/Hero";
 import { Stats } from "../components/Stats";
 import { Projects } from "../components/Projects";
 import { About } from "../components/About";
+import { CareerTimeline } from "../components/CareerTimeline";
 import { Skills } from "../components/Skills";
 import { ExperienceTimeline } from "../components/ExperienceTimeline";
+import { MicrosoftAIJourney } from "../components/MicrosoftAIJourney";
 import { ResearchWork } from "../components/ResearchWork";
-import { Blogs } from "../components/Blogs";
-import { OpenSource } from "../components/OpenSource";
 import { Contact } from "../components/Contact";
 import { Footer } from "../components/Footer";
+import { SeoHead } from "../components/SeoHead";
 import { scrollToSection } from "../lib/scroll";
 
 const BOOT_KEY = "portfolio-booted";
@@ -33,7 +34,7 @@ export function HomePage() {
     setBooting(false);
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (booting) return;
 
     const hashId = location.hash.replace("#", "");
@@ -42,15 +43,12 @@ export function HomePage() {
 
     if (!targetId) return;
 
-    const timer = window.setTimeout(() => {
-      scrollToSection(targetId);
-    }, 50);
-
-    return () => window.clearTimeout(timer);
+    scrollToSection(targetId, "auto");
   }, [booting, location.hash, location.state]);
 
   return (
     <>
+      <SeoHead />
       <AnimatePresence mode="wait">
         {booting && <BootScreen key="boot" onComplete={handleBootComplete} />}
       </AnimatePresence>
@@ -63,11 +61,11 @@ export function HomePage() {
             <Stats />
             <Projects />
             <About />
+            <CareerTimeline />
             <Skills />
-            <ResearchWork />
             <ExperienceTimeline />
-            <Blogs />
-            <OpenSource />
+            <MicrosoftAIJourney />
+            <ResearchWork />
             <Contact />
           </main>
           <Footer />

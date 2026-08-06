@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { blogPosts } from "../data/blog";
+import { resetScrollInstant } from "../lib/scroll";
 import { SectionLabel } from "./ui/SectionLabel";
 import { GlowCard } from "./ui/GlowCard";
 import { Tag } from "./ui/Tag";
@@ -13,8 +14,8 @@ export function Blogs() {
         <SectionLabel label="blog" />
         <h2 className="section-heading mt-4">Writing</h2>
         <p className="mt-3 max-w-2xl text-text-muted">
-          Notes on voice AI, lead gen, production RAG, and ML routing from
-          systems I have shipped.
+          Notes on voice AI, lead gen, production RAG, agents, and multilingual
+          systems from work I have shipped.
         </p>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
@@ -33,7 +34,11 @@ export function Blogs() {
                 transition={{ delay: i * 0.08 }}
               >
                 <GlowCard className="h-full !p-0 overflow-hidden">
-                  <Link to={`/blog/${post.id}`} className="flex h-full flex-col p-6">
+                  <Link
+                    to={`/blog/${post.id}`}
+                    className="flex h-full flex-col p-6"
+                    onClick={resetScrollInstant}
+                  >
                     <p className="font-mono text-xs text-accent-cyan">
                       {formattedDate} · {post.readTime}
                     </p>

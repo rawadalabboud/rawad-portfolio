@@ -17,5 +17,5 @@
   <path d="M400 204c28-18 56 24 84 6s56-28 84-6 56 24 84 6" stroke="#c97b63" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.65"/>
   <rect x="552" y="148" width="120" height="72" rx="14" stroke="#d9b86c" stroke-width="2" fill="#201e1b"/>
   <path d="M576 180c12 8 24 8 36 0M576 200c16 6 32 6 48 0" stroke="#f3ede4" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-  <text x="40" y="318" fill="#9b9488" font-family="ui-monospace, monospace" font-size="18">RAG · retrieval · streaming</text>
+  <text x="40" y="318" fill="#9b9488" font-family="ui-monospace, monospace" font-size="18">RAG ï¿½ retrieval ï¿½ streaming</text>
 </svg>

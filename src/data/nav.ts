@@ -5,12 +5,11 @@ export type NavLink = {
 };
 
 export const navLinks: NavLink[] = [
-  { label: "Home", href: "#home", kind: "section" },
-  { label: "Projects", href: "#projects", kind: "section" },
+  { label: "Work", href: "#projects", kind: "section" },
   { label: "About", href: "#about", kind: "section" },
-  { label: "Research", href: "#research", kind: "section" },
+  { label: "Skills", href: "#skills", kind: "section" },
   { label: "Experience", href: "#experience", kind: "section" },
-  { label: "Blogs", href: "#blogs", kind: "section" },
-  { label: "Open source", href: "#open-source", kind: "section" },
+  { label: "Azure AI", href: "#microsoft-ai", kind: "section" },
+  { label: "Research", href: "#research", kind: "section" },
   { label: "Contact", href: "#contact", kind: "section" },
 ];

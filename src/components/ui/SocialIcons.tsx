@@ -18,6 +18,21 @@ export function GitHubIcon({ size = 20, className }: IconProps) {
   );
 }
 
+export function GoogleScholarIcon({ size = 20, className }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      className={className}
+    >
+      <path d="M5.242 13.769 2 22l8.192-3.46L12 12l-6.758 1.769Zm14.758-6.92L13.808 2 12 12l4.192 8.54 8.192-3.46-6.384-6.231ZM12 12 5.242 6.849 12 2l6.758 4.849L12 12Z" />
+    </svg>
+  );
+}
+
 export function LinkedInIcon({ size = 20, className }: IconProps) {
   return (
     <svg

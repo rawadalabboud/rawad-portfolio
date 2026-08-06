@@ -10,6 +10,7 @@ import {
 import {
   phdResearch,
   researchOutputs,
+  type ResearchAuthor,
   type ResearchItem,
   type ResearchKind,
 } from "../data/research";
@@ -17,6 +18,7 @@ import { profile } from "../data/profile";
 import { publicUrl } from "../lib/publicUrl";
 import { GlowCard } from "./ui/GlowCard";
 import { SectionLabel } from "./ui/SectionLabel";
+import { GoogleScholarIcon, LinkedInIcon } from "./ui/SocialIcons";
 import { Tag } from "./ui/Tag";
 
 const kindMeta: Record<
@@ -36,21 +38,64 @@ const statusStyles: Record<ResearchItem["status"], string> = {
   completed: "border-accent-cyan/25 bg-accent-cyan/8 text-accent-cyan",
 };
 
-function AuthorList({ authors }: { authors: string[] }) {
+function AuthorLinks({ author }: { author: ResearchAuthor }) {
+  if (!author.linkedin && !author.scholar && !author.profile) return null;
+
+  return (
+    <span className="ml-1 inline-flex items-center gap-1 align-middle">
+      {author.linkedin && (
+        <a
+          href={author.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${author.name} on LinkedIn`}
+          className="text-text-muted transition hover:text-accent-cyan"
+        >
+          <LinkedInIcon size={12} />
+        </a>
+      )}
+      {author.scholar && (
+        <a
+          href={author.scholar}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${author.name} on Google Scholar`}
+          className="text-text-muted transition hover:text-accent-violet"
+        >
+          <GoogleScholarIcon size={12} />
+        </a>
+      )}
+      {author.profile && (
+        <a
+          href={author.profile}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${author.name} on ResearchGate`}
+          className="text-text-muted transition hover:text-text-primary"
+        >
+          <ExternalLink size={12} />
+        </a>
+      )}
+    </span>
+  );
+}
+
+function AuthorList({ authors }: { authors: ResearchAuthor[] }) {
   return (
     <p className="mt-3 text-sm leading-relaxed text-text-muted">
       {authors.map((author, index) => (
-        <span key={author}>
+        <span key={author.name} className="inline-flex flex-wrap items-center">
           {index > 0 && <span className="text-text-muted/60"> · </span>}
           <span
             className={
-              author === profile.name
+              author.name === profile.name
                 ? "font-medium text-accent-cyan"
                 : "text-text-muted"
             }
           >
-            {author}
+            {author.name}
           </span>
+          <AuthorLinks author={author} />
         </span>
       ))}
     </p>
@@ -239,9 +284,9 @@ export function ResearchWork() {
         <SectionLabel label="research" />
         <h2 className="section-heading mt-4">Research work</h2>
         <p className="mt-3 max-w-2xl text-text-muted">
-          Doctoral research on rTMS response biomarkers, a published psychiatry
-          book chapter, a submitted cross-national acceptability study, and advanced
-          TMS–EEG training at Aalto University.
+          Biomedical ML foundation: EEG pipelines, clinical data engineering,
+          and co-authored psychiatric research that shaped my approach to
+          rigorous evaluation in production AI.
         </p>
 
         <div className="mt-10">

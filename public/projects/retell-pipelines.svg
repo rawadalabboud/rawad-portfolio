@@ -14,5 +14,5 @@
   <path d="M152 212c24-10 48 14 72 0s48-14 72 0 48 14 72 0 48-14 72 0 48 14 72 0 24-8 48 0" stroke="#c97b63" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
   <circle cx="400" cy="170" r="22" stroke="#d9b86c" stroke-width="2" fill="#201e1b"/>
   <circle cx="400" cy="170" r="6" fill="#c97b63"/>
-  <text x="40" y="318" fill="#9b9488" font-family="ui-monospace, monospace" font-size="18">Retell · pipelines · webhooks</text>
+  <text x="40" y="318" fill="#9b9488" font-family="ui-monospace, monospace" font-size="18">Retell ï¿½ pipelines ï¿½ webhooks</text>
 </svg>

@@ -8,7 +8,7 @@ cd "$ROOT"
 
 if [ ! -d .git ]; then
   git init -b main
-  git add README.md
+  git add README.md assets/
   git commit -m "$(cat <<'EOF'
 docs: add GitHub profile README
 

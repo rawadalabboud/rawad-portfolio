@@ -1,6 +1,5 @@
 import type { LucideIcon } from "lucide-react";
 import {
-  AudioLines,
   Brain,
   MapPinned,
   MessageSquareText,
@@ -39,29 +38,24 @@ const accentStyles = {
 } as const;
 
 const covers: Record<string, CoverConfig> = {
-  "c2c-tracking": {
+  "voice-ai-platform": {
     icon: PhoneCall,
-    label: "C2C · voice · attribution",
+    label: "Retell · NestJS · voice pipelines",
     accent: "gold",
   },
-  "retell-voice-agents": {
-    icon: AudioLines,
-    label: "Retell · pipelines · webhooks",
-    accent: "coral",
-  },
-  "webflow-rag": {
+  "insurance-rag-assistant": {
     icon: MessageSquareText,
-    label: "RAG · Webflow · retrieval",
+    label: "RAG · BM25 · hybrid retrieval",
     accent: "gold",
   },
   "offer-hub": {
     icon: MapPinned,
-    label: "MCP · Skybridge · widgets",
+    label: "MCP · ChatGPT · Claude",
     accent: "coral",
   },
-  "lead-routing-ml": {
+  "ml-conversion-scoring": {
     icon: Route,
-    label: "ML · CatBoost · routing",
+    label: "CatBoost · calibration · FastAPI",
     accent: "green",
   },
   "eeg-research": {
@@ -76,7 +70,7 @@ type ProjectCoverArtProps = {
 };
 
 export function ProjectCoverArt({ projectId }: ProjectCoverArtProps) {
-  const cover = covers[projectId] ?? covers["c2c-tracking"];
+  const cover = covers[projectId] ?? covers["voice-ai-platform"];
   const styles = accentStyles[cover.accent];
   const Icon = cover.icon;
 

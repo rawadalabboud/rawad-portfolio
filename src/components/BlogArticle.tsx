@@ -1,10 +1,8 @@
-import { useEffect } from "react";
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import type { BlogPost } from "../data/blog";
 import { Tag } from "./ui/Tag";
-import { scrollToTop } from "../lib/scroll";
 
 type BlogArticleProps = {
   post: BlogPost;
@@ -12,10 +10,6 @@ type BlogArticleProps = {
 };
 
 export function BlogArticle({ post, children }: BlogArticleProps) {
-  useEffect(() => {
-    scrollToTop("auto");
-  }, [post.id]);
-
   const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",

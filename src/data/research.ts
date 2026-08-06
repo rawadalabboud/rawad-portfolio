@@ -11,6 +11,42 @@ export type ResearchLink = {
   href: string;
 };
 
+export type ResearchAuthor = {
+  name: string;
+  linkedin?: string;
+  scholar?: string;
+  profile?: string;
+};
+
+const coAuthorProfiles: Record<
+  string,
+  Pick<ResearchAuthor, "linkedin" | "scholar" | "profile">
+> = {
+  "Bruno Millet": {
+    linkedin: "https://www.linkedin.com/in/bruno-millet-07782a101",
+    scholar: "https://scholar.google.com/citations?user=3PVqjuwAAAAJ",
+  },
+  "Thibaut Dondaine": {
+    linkedin: "https://www.linkedin.com/in/thibaut-dondaine",
+    scholar: "https://scholar.google.com/citations?user=DpSelCEAAAAJ",
+  },
+  "Alexis Bourla": {
+    linkedin: "https://www.linkedin.com/in/alexis-bourla-16570b142",
+    scholar: "https://scholar.google.com/citations?user=DPHcRbYAAAAJ",
+    profile: "https://www.researchgate.net/profile/Alexis-Bourla-2",
+  },
+  "Florian Ferreri": {
+    profile: "https://www.researchgate.net/profile/Florian-Ferreri",
+  },
+  "Stéphane Mouchabac": {
+    profile: "https://www.researchgate.net/profile/Stephane-Mouchabac",
+  },
+};
+
+function author(name: string): ResearchAuthor {
+  return { name, ...coAuthorProfiles[name] };
+}
+
 export type ResearchItem = {
   id: string;
   kind: ResearchKind;
@@ -23,7 +59,7 @@ export type ResearchItem = {
   description: string;
   highlights: string[];
   tags: string[];
-  authors?: string[];
+  authors?: ResearchAuthor[];
   links: ResearchLink[];
   coverImage?: string;
   certificatePath?: string;
@@ -73,14 +109,14 @@ export const researchOutputs: ResearchItem[] = [
       "Published by Elsevier Masson (288 pp.)",
     ],
     authors: [
-      "Bruno Millet",
-      "Rawad Al Abboud",
-      "Bertrand Saudreau",
-      "Son Ha Lam",
-      "Florian Ferreri",
-      "Alexis Bourla",
-      "Stéphane Mouchabac",
-      "Thibaut Dondaine",
+      author("Bruno Millet"),
+      author("Rawad Al Abboud"),
+      author("Bertrand Saudreau"),
+      author("Son Ha Lam"),
+      author("Florian Ferreri"),
+      author("Alexis Bourla"),
+      author("Stéphane Mouchabac"),
+      author("Thibaut Dondaine"),
     ],
     tags: ["Psychiatry", "rTMS", "Personalized Medicine", "Book Chapter"],
     links: [
@@ -113,15 +149,15 @@ export const researchOutputs: ResearchItem[] = [
       "Manuscript no. JAFD-D-26-05988",
     ],
     authors: [
-      "Alexis Bourla",
-      "Florian Ferreri",
-      "Alice Person",
-      "Rawad Al Abboud",
-      "Nicolas Jurado",
-      "Biné Mariam Ndiongue",
-      "Fatoumata Coulibaly",
-      "Bruno Millet",
-      "Stéphane Mouchabac",
+      author("Alexis Bourla"),
+      author("Florian Ferreri"),
+      author("Alice Person"),
+      author("Rawad Al Abboud"),
+      author("Nicolas Jurado"),
+      author("Biné Mariam Ndiongue"),
+      author("Fatoumata Coulibaly"),
+      author("Bruno Millet"),
+      author("Stéphane Mouchabac"),
     ],
     tags: ["rTMS", "Acceptability", "Cross-national", "Survey", "Reproducibility"],
     links: [

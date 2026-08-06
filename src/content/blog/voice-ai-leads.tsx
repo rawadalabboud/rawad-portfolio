@@ -27,10 +27,10 @@ export function VoiceAiLeadsContent() {
       </p>
 
       <p>
-        We ended up with seven Retell pipelines (events, transfer, reach,
-        relance, receptionist, flux-froid, transcript) across fifteen NestJS
-        modules and sixty-plus HTTP endpoints. Each one handles part of the
-        lifecycle: starting the call, transfers, retrying unreachable numbers,
+        We ended up with seven Retell pipelines I architected (events, transfer,
+        reach, relance, receptionist, flux-froid, transcript), deployed inside
+        a broader production NestJS voice module. Each pipeline handles part of
+        the lifecycle: starting the call, transfers, retrying unreachable numbers,
         extracting fields from transcripts, deduplicating webhook events in
         Upstash Redis.
       </p>

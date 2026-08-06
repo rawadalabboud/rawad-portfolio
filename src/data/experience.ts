@@ -1,48 +1,104 @@
-export type ExperienceItem = {
-  period: string;
-  title: string;
-  company: string;
-  location: string;
-  bullets: string[];
+export type ExperienceOrg = {
+  name: string;
+  href?: string;
 };
 
-export const experience: ExperienceItem[] = [
+export type ExperienceCaseStudy = {
+  period: string;
+  title: string;
+  organizations: ExperienceOrg[];
+  orgSeparator?: string;
+  location: string;
+  problem: string;
+  solution: string;
+  impact: string[];
+  technologies: string[];
+};
+
+export const experience: ExperienceCaseStudy[] = [
   {
-    period: "Oct 2025 to Jun 2026",
-    title: "GenAI Developer, Work-study",
-    company: "Hipto, Lead Generation",
+    period: "Oct 2025 – Present",
+    title: "GenAI Engineer",
+    organizations: [
+      { name: "Hipto", href: "https://hipto.com" },
+      { name: "Lead Generation" },
+    ],
+    orgSeparator: " · ",
     location: "Paris",
-    bullets: [
-      "Shipped Hipto's production Click-to-Call (C2C) voice-qualification platform on NestJS + Retell AI: 5 verticals, 5 telco operators (Orange, Sosh, SFR, Free, Bouygues), 13 experiment profiles across 6 call-center partners, handling 4,400+ AI-qualified calls on 2,655 qualified leads in H1 2026.",
-      "Architected 7 dedicated Retell pipelines (events, transfer, reach, relance, receptionist, flux-froid, transcript) across 15 modules and 60+ HTTP endpoints, with OpenAI structured transcript extraction and Upstash Redis deduplication.",
-      "Engineered a production Webflow RAG assistant for Groupe Hueber Assurances (150k+ insured clients, 6 product lines): Webflow ingestion, OpenAI embeddings, hybrid BM25 + cosine retrieval with LLM reranking, Upstash Redis, SSE streaming, embedded chat widget; quality-gated by a 40-question golden dataset.",
-      "Designed Hipto Offer Hub, a Skybridge / MCP app embedded in ChatGPT and Claude with 5 endpoints, 10+ tool calls, and 2 React widgets (Leaflet eligibility map + 6-step lead-capture funnel) over a 57-offer catalog; deployed on Google App Engine.",
-      "Prototyped an ML conversion-scoring module for routing support (Python, CatBoost, calibration, temporal backtests, FastAPI, Streamlit); foundation for Hipto's Hopti integration.",
+    problem:
+      "Hipto's lead-generation business needed AI systems that could qualify inbound calls at scale, answer insurance questions from live documentation, surface offers inside LLM chat interfaces, and score lead conversion, all in production, not as prototypes.",
+    solution:
+      "Shipped a Click-to-Call voice platform on NestJS and Retell AI with 7 agent pipelines across 5 verticals. Built a hybrid RAG assistant for Groupe Hueber Assurances with BM25 + cosine retrieval and LLM reranking. Delivered Hipto Offer Hub as an MCP app in ChatGPT and Claude. Prototyped ML conversion scoring with CatBoost, calibration, and temporal backtests.",
+    impact: [
+      "4,400+ AI-qualified calls across 5 verticals and 13 experiment profiles",
+      "RAG assistant deployed for 150k+ insured clients with a 40-question evaluation dataset",
+      "57 offers automated via MCP with 10+ AI tools and eligibility controls",
+      "7 voice-agent pipelines covering transfer, tracking, relance, and transcript extraction",
+    ],
+    technologies: [
+      "NestJS",
+      "Retell AI",
+      "OpenAI",
+      "MCP",
+      "Skybridge",
+      "BM25",
+      "Redis",
+      "CatBoost",
+      "FastAPI",
+      "Google App Engine",
     ],
   },
   {
-    period: "2023 to 2025",
+    period: "2023 – 2025",
     title: "Research Engineer, Data Engineering & ML",
-    company: "Clariane & Paris Brain Institute",
+    organizations: [
+      { name: "Clariane", href: "https://www.clariane.com" },
+      {
+        name: "Paris Brain Institute",
+        href: "https://www.institutducerveau-icm.org/en/",
+      },
+    ],
+    orgSeparator: " & ",
     location: "Paris",
-    bullets: [
-      "Built Python pipelines for EEG, clinical, and speech data.",
-      "Applied ML to psychiatric care, neuromodulation, and speech-derived biomarkers.",
-      "Co-authored research on rTMS acceptability and personalized psychiatric care.",
-      "Built dashboards and worked closely with clinicians to turn raw data into something useful.",
+    problem:
+      "Psychiatry research teams at Clariane and the Paris Brain Institute had raw EEG, clinical, and vocal data scattered across formats, unusable for statistical analysis or predictive modeling without heavy manual prep.",
+    solution:
+      "Built Python ingestion and cleaning pipelines for multimodal biomedical data. Automated structuring of EEG, clinical records, and speech-derived features into analysis-ready datasets. Coordinated with clinicians and neuroscientists on study design and co-authored submitted manuscripts.",
+    impact: [
+      "Reliable datasets for psychiatric care and neuromodulation research",
+      "Improved statistical analysis reproducibility across research teams",
+      "Co-authored 2 submitted articles on rTMS acceptability and personalized psychiatric care",
+    ],
+    technologies: [
+      "Python",
+      "pandas",
+      "MNE-Python",
+      "Signal Processing",
+      "EEG",
+      "Machine Learning",
+      "Data Visualization",
     ],
   },
   {
-    period: "Apr 2022 to Sep 2022",
-    title: "Data Science Intern, Parkinson's EEG Classification",
-    company: "MINDig",
+    period: "Apr – Sep 2022",
+    title: "ML Research Intern",
+    organizations: [{ name: "MINDig", href: "https://mindig.io/" }],
     location: "Rennes",
-    bullets: [
-      "Master's internship on detecting Parkinson's disease from resting-state HD-EEG, thesis supervised by Mahmoud Hassan and Aya Kabbara.",
-      "Worked on a cohort of 108 subjects (77 PD patients, 31 healthy controls) from the University of Basel.",
-      "Built a feature pipeline: source reconstruction on 210 brain regions, functional connectivity (phase locking value), and relative band power across five EEG bands.",
-      "Trained and compared five classifiers (logistic regression, SVM, decision tree, random forest, extra trees) with grid search and nested 5×2 cross-validation.",
-      "Best model (Extra Trees with connectivity, spectral, and demographic features) reached 96% ROC-AUC and ~89% accuracy.",
+    problem:
+      "Early Parkinson's disease detection from resting-state EEG required a rigorous feature pipeline and model comparison on a small clinical cohort, with nested cross-validation to avoid overfitting.",
+    solution:
+      "Developed a classifier on 108 subjects using functional connectivity features from source-reconstructed EEG. Evaluated 5 models with nested 5×2 cross-validation and grid search across feature combinations.",
+    impact: [
+      "Best model (Extra Trees) reached ROC-AUC 0.96 and 88.9% accuracy",
+      "Validated pipeline on 77 PD patients and 31 healthy controls from University of Basel",
+    ],
+    technologies: [
+      "Python",
+      "scikit-learn",
+      "EEG",
+      "Functional Connectivity",
+      "Feature Engineering",
+      "Cross-Validation",
     ],
   },
 ];

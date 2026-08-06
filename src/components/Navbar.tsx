@@ -4,12 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "../data/nav";
 import { useActiveSection } from "../hooks/useActiveSection";
-import { scrollToSection } from "../lib/scroll";
+import { isHomePath, scrollToSection } from "../lib/scroll";
 import { Logo } from "./ui/Logo";
-
-function isHomePath(pathname: string) {
-  return pathname === "/" || pathname === "";
-}
 
 export function Navbar() {
   const [open, setOpen] = useState(false);

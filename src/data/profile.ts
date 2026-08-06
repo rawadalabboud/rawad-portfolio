@@ -1,22 +1,31 @@
 export const profile = {
   name: "Rawad Al Abboud",
-  title: "ML/AI Engineer · Data Scientist · GenAI Developer",
+  title: "AI Engineer · ML Engineer · GenAI Engineer",
   location: "Paris, France",
-  /** Used only for mailto form submission; not displayed on the site */
   contactEmail: "rawadabboud.ra@gmail.com",
   handle: "@rawadabboud",
   tagline:
-    "I build AI systems that ship: voice agents, RAG chatbots, predictive models, and full-stack apps wired to real APIs and data pipelines.",
-  heroGreeting: "Hey, I'm",
+    "I design, build, and deploy production AI systems: voice agents, RAG assistants, ML scoring, and agentic apps wired to real APIs.",
+  heroHeadline:
+    "Production AI systems that ship. Not slide decks.",
   heroSubtitle:
-    "ML/AI engineer and data scientist, based in Paris.",
-  cvPath: "/cv_rawad_al_abboud.pdf?v=2026-07-12",
-  cvDownloadName: "Rawad_Al_Abboud_Resume.pdf",
+    "GenAI Engineer building voice agents, RAG pipelines, and ML models in production at Hipto.",
+  heroGreeting: "Rawad Al Abboud",
+  cvPath: "/cv_rawad_al_abboud.pdf?v=2026-08-06",
+  cvDownloadName: "Rawad_Al_Abboud_CV.pdf",
   profileImage: "/profile.png",
+  siteUrl: "https://rawadalabboud.github.io/rawad-portfolio/",
   links: {
     github: "https://github.com/rawadalabboud",
     linkedin: "https://www.linkedin.com/in/rawad-al-abboud/",
   },
-  profileTags: ["GenAI", "ML", "RAG", "Voice AI", "MCP", "Data Engineering"],
-  statusBadge: "Available for work",
+  profileTags: [
+    "Voice AI",
+    "RAG",
+    "AI Agents",
+    "MCP",
+    "ML",
+    "Azure AI",
+  ],
+  statusBadge: "Open to AI engineering roles",
 } as const;

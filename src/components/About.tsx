@@ -1,32 +1,33 @@
 import { motion } from "framer-motion";
-import { Brain, LineChart, Database } from "lucide-react";
+import { Bot, Layers, Microscope } from "lucide-react";
 import { SectionLabel } from "./ui/SectionLabel";
-import { GlowCard } from "./ui/GlowCard";
 
 const focusCards = [
   {
-    icon: Brain,
-    title: "GenAI in production",
+    icon: Bot,
+    title: "Why production AI",
     description:
-      "RAG assistants, tool-calling apps, voice agents, and streaming UIs hooked up to real APIs.",
+      "I care about systems that handle real traffic: calls that qualify, assistants that retrieve the right document, models that route leads correctly. The gap between a demo and production is where the engineering actually happens.",
   },
   {
-    icon: LineChart,
-    title: "Predictive modeling",
+    icon: Layers,
+    title: "Full-stack AI engineering",
     description:
-      "Conversion scoring, calibration, backtesting. ML evaluated on business metrics, not just accuracy.",
+      "From NestJS backends and Retell voice pipelines to hybrid RAG retrieval and CatBoost scoring, I build the full path from model to deployed API to user-facing interface.",
   },
   {
-    icon: Database,
-    title: "Data & research engineering",
+    icon: Microscope,
+    title: "Research foundation",
     description:
-      "Pipelines for EEG, clinical, and ops data, from raw ingestion to dashboards people actually use.",
+      "Two years engineering biomedical data pipelines at Clariane and the Paris Brain Institute taught me rigorous evaluation, the same discipline I apply to golden datasets and temporal backtests in production AI.",
   },
 ];
 
-const bio = `I'm Rawad, an ML/AI engineer and data scientist in Paris. My path started in telecom engineering and signal processing, moved through EEG-based research, and landed in applied AI: pipelines, predictive models, RAG systems, voice agents, and full-stack GenAI products.
-
-These days I work where LLMs meet structured data and real APIs. I like building things that retrieve, call tools, qualify leads, and stream answers, not just demo well in a slide deck.`;
+const bioParagraphs = [
+  "I'm a Lebanese engineer who studied telecommunications in Beirut, then moved to Paris for a master's in signal and image processing at CentraleSupélec and Université Paris-Saclay. Signal processing turned into machine learning, machine learning turned into research engineering on EEG and clinical data, and that path led me to building production AI systems.",
+  "Today I'm a GenAI Engineer at Hipto in Paris, shipping voice agents that qualify thousands of calls, RAG assistants serving 150k+ insurance clients, MCP apps embedded in ChatGPT and Claude, and ML models for lead conversion scoring. Before Hipto, I spent two years at Clariane and the Paris Brain Institute building data pipelines for psychiatric research.",
+  "What draws me to AI engineering is the combination of hard technical problems and immediate business impact. A voice agent that qualifies a lead in 90 seconds, a RAG system that answers an insurance question from live docs, a scoring model that routes the right lead to the right partner. These are systems where engineering decisions matter.",
+];
 
 export function About() {
   return (
@@ -34,39 +35,44 @@ export function About() {
       <div className="section-container">
         <SectionLabel label="about" />
         <h2 className="section-heading mt-4">
-          A bit about me
+          Engineer from Beirut, building AI in Paris
         </h2>
 
-        <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-status/30 bg-status/10 px-4 py-1.5 text-sm text-status">
-          <span className="h-2 w-2 animate-pulse rounded-full bg-status" />
-          Open to new roles in AI, data, and GenAI
-        </span>
+        <div className="mt-8 max-w-3xl space-y-5">
+          {bioParagraphs.map((paragraph, i) => (
+            <motion.p
+              key={i}
+              className="text-base leading-relaxed text-text-muted"
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.06 }}
+            >
+              {paragraph}
+            </motion.p>
+          ))}
+        </div>
 
-        <motion.p
-          className="mt-8 max-w-3xl whitespace-pre-line text-text-muted leading-relaxed"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          {bio}
-        </motion.p>
-
-        <div className="mt-12 grid gap-6 sm:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:grid-cols-3">
           {focusCards.map((card, i) => {
             const Icon = card.icon;
             return (
-              <GlowCard key={card.title} className="!p-5">
-                <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                >
-                  <Icon className="mb-3 h-8 w-8 text-accent-cyan" />
-                  <h3 className="mb-2 font-semibold">{card.title}</h3>
-                  <p className="text-sm text-text-muted">{card.description}</p>
-                </motion.div>
-              </GlowCard>
+              <motion.div
+                key={card.title}
+                className="rounded-2xl border border-white/[0.06] bg-bg-card p-5"
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+              >
+                <Icon className="mb-3 h-5 w-5 text-accent-cyan" strokeWidth={1.75} />
+                <h3 className="mb-2 text-sm font-semibold text-text-primary">
+                  {card.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-text-muted">
+                  {card.description}
+                </p>
+              </motion.div>
             );
           })}
         </div>
