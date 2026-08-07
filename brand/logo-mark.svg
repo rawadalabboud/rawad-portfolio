@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" role="img" aria-label="rawad.ai logo">
+  <defs>
+    <linearGradient id="ra-ember" x1="8" y1="8" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4A99C"/>
+      <stop offset="1" stop-color="#E07A6A"/>
+    </linearGradient>
+    <linearGradient id="ra-pulse" x1="8" y1="8" x2="28" y2="18" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EDE9FE"/>
+      <stop offset="0.5" stop-color="#A78BFA"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+
+  <path
+    d="M8.5 18 L12.5 10.5 L16.5 18 L20.5 10.5 L24.5 18"
+    stroke="url(#ra-pulse)"
+    stroke-width="2.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <path d="M12.5 37V14.5" stroke="url(#ra-ember)" stroke-width="3.6" stroke-linecap="round"/>
+  <path
+    d="M12.5 14.5C12.5 10.5 16 9 19.5 11.5C24 14.5 28.5 19 28.5 24.5C28.5 32 22.5 36.5 16 34"
+    stroke="url(#ra-ember)"
+    stroke-width="3.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+  <path d="M12.5 24 29.5 37" stroke="url(#ra-ember)" stroke-width="3.6" stroke-linecap="round"/>
+  <circle cx="12.5" cy="24" r="2.85" fill="#E07A6A"/>
+</svg>
